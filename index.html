@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>Add watermark on images</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+</head>
+<body>
+    <section class="page-header">
+        <h1 class="project-name">Watermark</h1>
+        <h2 class="project-tagline">Add watermark on images.</h2>
+    </section>
+    <section class="main-content">
+        <h1>
+            <a id="jquery-plugin-watermark" class="anchor" href="#jquery-plugin-watermark" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>About Watermark</h1>
+        <p>Watermark on images help you seal batch of images, like a stamp tool.</p>
+
+        <p>Because this plugin is written in HTML5 and Javascript, so it will operate without a server for image
+            processing, bandwidth limit is no longer the thing you need to worry.</p>
+        <h2>
+            <a id="demo" class="anchor" href="#demo" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Add watermark on images.</h2>
+        <div id="pluginConfig">
+            <div class="imageConfig">
+                <h3>Watermark Setting</h3>
+                <form id="watermarkConfig">
+                    <p>
+                        <label><span>URL Path:</span>
+                            <input type="url" placeholder="Enter image URL" name="path" id="path" class="inputLarge" value="https://oathanrex.github.io/watermark/watermark.png">
+                        </label>
+                    </p>
+                    <p>
+                        <label><span>Text:</span>
+                            <input type="text" placeholder="Enter text" name="text" id="text" class="inputLarge">
+                        </label>
+                    </p>
+                    <p id="textConfig">
+                        <label><span>textWidth:</span>
+                            <input type="number" name="textWidth" id="textWidth" class="inputSmall" value="130">
+                        </label>
+                        <label>Text Size:
+                            <input type="number" name="textSize" id="textSize" class="inputSmall" value="12">
+                        </label>
+                        <label>Text Color:
+                            <input type="color" name="textColor" id="textColor" class="inputSmall" value="#ffffff">
+                        </label>
+                        <label>Text Background:
+                            <input type="color" name="textBg" id="textBg" class="inputSmall" value="#000000">
+                        </label>
+                    </p>
+                    <p>
+                        <label><span>Gravity:</span>
+                            <select name="gravity" id="gravity">
+                                <option value="nw">Northwest</option>
+                                <option value="n">North</option>
+                                <option value="ne">Northeast</option>
+                                <option value="w">West</option>
+                                <option value="e">East</option>
+                                <option value="sw">Southwest</option>
+                                <option value="s">South</option>
+                                <option value="se" selected>Southeast</option>
+                                <option value="c">Central</option>
+                            </select>
+                        </label>
+                    </p>
+                    <p>
+                        <label><span>Opacity:</span>
+                            <input type="number" value="0.7" min="0" max="1" step="0.1" id="opacity" name="opacity"
+                                class="inputSmall">
+                        </label>
+                    </p>
+                    <p>
+                        <label><span>Margin:</span>
+                            <input type="number" value="10" id="margin" name="margin" class="inputSmall">
+                        </label>
+                    </p>
+                    <p>
+                        <label><span>Output Width:</span>
+                            <input type="text" value="auto" id="outputWidth" name="outputWidth" class="inputSmall">
+                        </label>
+                        <label>Output Height:
+                            <input type="text" value="auto" id="outputHeight" name="outputHeight" class="inputSmall">
+                        </label>
+                        <label>Output Type:
+                            <select name="outputType" id="outputType">
+                                <option value="jpeg" selected>jpeg</option>
+                                <option value="png">png</option>
+                                <option value="webp">webp</option>
+                            </select>
+                        </label>
+                    </p>
+                    <p class="buttons">
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Submit">
+                    </p>
+                </form>
+            </div>
+            <div id="withWatermark" class="imageWrap">
+                <img id="imageDemo" src="images/1.png" alt="">
+            </div>
+        </div>
+        <h2>
+            <a id="features" class="anchor" href="#features" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Features</h2>
+        <ol>
+            <li> Using an image or text to stamp.</li>
+            <li> Allows you to select a position to stamp on 8 corners of the image.</li>
+            <li> Size and format options after the stamped image.</li>
+            <li> Export image to base64 type, so might instead directly into the old photos or upload server allows, for
+                example, Imgur.</li>
+        </ol>
+        <h3>
+            <a id="defect" class="anchor" href="#defect" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Defects</h3>
+        <ol>
+            <li> Does not work on older browsers that don't support <strong>HTML5</strong>.</li>
+        </ol>    
+        </div>
+        <footer class="site-footer">
+            <span class="site-footer-owner"><a href="https://github.com/oathanrex/watermark">Watermark</a> is
+                maintained by <a href="https://github.com/oathanrex">oathanrex</a>.</span>
+
+            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+        </footer>
+    </section>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://unpkg.com/watermark@1.0.2/dist/jquery.watermark.min.js" type="text/javascript"></script>
+    <script src="javascripts/main.js" type="text/javascript"></script>
+</body>
+</html>
